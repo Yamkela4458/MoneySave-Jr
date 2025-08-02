@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lan="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Yamkela Lusithi | MoneySave Jr</title>
+        <link rel="Stylesheet" a href="style.css" />
+    </head>
+    <body>
+        <div class="body-content">
+            <nav class="nav-tabs">
+            <a href="save.html" class="tab-link">Save</a>
+            <a href="spend.html" class="tab-link">Spend</a>
+            <a href="budget.html" class="tab-link">Budget</a>
+             <a href="about.html" class="tab-link">About</a>
+            </nav>
+              
+            <h1 class="typewriter-glow" id="page-heading">Welcome to MoneySave Jr</h1>
+
+            <section class="vibe-zone">
+            <div class="floating-words">
+            <span style="--i:1;">Plan</span>
+            <span style="--i:2;">Save</span>
+            <span style="--i:3;">Spend</span>
+            <span style="--i:4;">Budget</span>
+            <span style="--i:5;">Goal</span>
+            </div>
+            </section>
+
+        <!-- Money Message Section -->
+        <div class="money-box">
+        <h2 id="animated-paragraph">
+        MoneySave Jr is a user-friendly platform that teaches<br>
+        young learners how to manage their pocket money. Whether it’s <br>
+        R10 or R50 a week, learning to plan, save, and spend wisely <br>
+        is a life skill and we’re making it fun and simple for <br>
+        every learner.
+        </h2>
+        </div>
+
+    <style>
+        .money-box {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 2rem;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        color: #fff;
+        font-family: 'Comic Sans MS', 'Poppins', sans-serif;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        animation: fadeInBox 1.5s ease-out forwards;
+        }
+
+    .money-box::before {
+        content: "";
+        position: absolute;
+        top: -20%;
+        left: -10%;
+        width: 150%;
+        height: 150%;
+        background: radial-gradient(circle at top left, #f6e19d, #81ecec, #fab1a0);
+        opacity: 0.15;
+        z-index: -1;
+        animation: pulseBG 8s infinite alternate;
+        }
+
+    #animated-paragraph {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        background-image: linear-gradient(90deg, #ffd139, #fab1a0, #55efc4);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: lightWords 6s linear infinite;
+        }
+
+    @keyframes fadeInBox {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+        }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        }
+    }
+
+  @keyframes lightWords {
+    0% {
+      background-position: 0%;
+    }
+    100% {
+      background-position: 100%;
+    }
+  }
+
+  @keyframes pulseBG {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.05);
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .money-box {
+      padding: 1rem;
+    }
+    #animated-paragraph {
+      font-size: 1.1rem;
+      line-height: 1.6rem;
+    }
+  }
+    </style>
+
+            <button class="start-planning-btn"><a href="planner.html">Start Planning Your Week</a></button>
+
+            <section id="Scenarios">
+
+            <div class="Scenario-1">
+            <h2>The Tuck Shop Trap</h2>
+            <p>Ayanda gets R20 every school day.
+                She usually buys chips and juice for R18, then spends the last R2 
+                on sweets. But this Friday, she wants to buy a class photo that costs R25.</p>
+
+                <h3>Decision Point:</h3>
+                <h4>Should Ayanda:</h4>
+
+                <p>Keep buying snacks every day and miss the class photo?</p>
+                <p>Cut her daily spending to R15 and save R5 per day for 5 days?</p>
+
+                <h4>Lesson:</h4>
+                <p>A little saving each day adds up. Planning ahead helps you say yes to bigger goals.</p>
+                </div>
+
+            <div class="scenario-2">
+                <h2>Headphones Hustle</h2>
+                <p>Lwazi’s aunt gave him R100 for doing well in his tests. He wants to buy headphones that cost R150.</p>
+                <p>He also gets R10 pocket money every day for lunch.</p>
+
+                <h3>Decision Point:</h3>
+                <h4>Should Lwazi:</h4>
+                <p>Spend the R100 now on snacks, a cheap toy, and data bundles?</p>
+                <p>Save R5 from his daily pocket money for 10 school days and combine it with his R100?</p>
+
+                <h4>Lesson:</h4>
+                <p>Short-term fun vs long-term value, saving helps you buy what really matters.</p>
+                </div>
+
+            <div class="scenario-3">
+                <h2>The Friday Treat Plan</h2>
+                <h3>Nandi gets R15 per day.</h3>
+                <p>She wants to buy a burger on Friday that costs R35, but she also enjoys buying a lollipop and soda every day (total R13).</p>
+
+                <h3>Decision Point:</h3>
+                <h4>If Nandi wants that burger, how much should she save daily? What can she skip or swap during the week?</h4>
+
+                <h4>Lesson:</h4>
+                <p>Making small sacrifices today lets you enjoy bigger rewards later.</p>
+                </div>
+                </section>
+                </div>
+
+                <footer class="main-footer">
+                    <div class="footer-content">
+                    <p>Created by Yamkela Lusithi</p> 
+                    <p>MoneySave Jr © 2025</p>
+                    </div>
+                </footer>
+            </body>
+        </html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lan="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Yamkela Lusithi | MoneySave Jr</title>
+        <link rel="Stylesheet" a href="style.css" />
+    </head>
+    <body>
+<section id="spend" style="padding: 2rem; max-width: 800px; margin: auto; font-family: 'Poppins', sans-serif;">
+  <h2 style="font-size: 2rem; color: #f1ba08; font-weight: bold;"> <img src="images/360_F_320988039_MtlKZNKQL60nNChRVxyHljbvyWWQQw6c.jpg" width="100"> Where Did My Money Go?</h2>
+  <p style="margin-bottom: 1rem;">
+    Track your school spending for the week. Are you spending more on Wants or Needs? Let’s find out.
+  </p>
+
+  <table style="width: 100%; border-collapse: collapse; margin-bottom: 1rem;">
+    <thead>
+      <tr style="background-color: #d7d7d7;">
+        <th>Item Bought</th>
+        <th>Price (R)</th>
+        <th>Need or Want?</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody id="spendTable">
+      <!-- 5 editable rows -->
+      <tr>
+        <td><input type="text" placeholder="e.g. Chips" /></td>
+        <td><input type="number" class="price" /></td>
+        <td>
+          <select class="type">
+            <option value="">--</option>
+            <option value="Need">Need</option>
+            <option value="Want">Want</option>
+          </select>
+        </td>
+        <td><input type="text" placeholder="Optional notes" /></td>
+      </tr>
+      <tr>
+        <td><input type="text" /></td>
+        <td><input type="number" class="price" /></td>
+        <td>
+          <select class="type">
+            <option value="">--</option>
+            <option value="Need">Need</option>
+            <option value="Want">Want</option>
+          </select>
+        </td>
+        <td><input type="text" /></td>
+      </tr>
+      <tr>
+        <td><input type="text" /></td>
+        <td><input type="number" class="price" /></td>
+        <td>
+          <select class="type">
+            <option value="">--</option>
+            <option value="Need">Need</option>
+            <option value="Want">Want</option>
+          </select>
+        </td>
+        <td><input type="text" /></td>
+      </tr>
+      <tr>
+        <td><input type="text" /></td>
+        <td><input type="number" class="price" /></td>
+        <td>
+          <select class="type">
+            <option value="">--</option>
+            <option value="Need">Need</option>
+            <option value="Want">Want</option>
+          </select>
+        </td>
+        <td><input type="text" /></td>
+      </tr>
+      <tr>
+        <td><input type="text" /></td>
+        <td><input type="number" class="price" /></td>
+        <td>
+          <select class="type">
+            <option value="">--</option>
+            <option value="Need">Need</option>
+            <option value="Want">Want</option>
+          </select>
+        </td>
+        <td><input type="text" /></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button onclick="calculateSpending()" style="padding: 0.6rem 1rem; background-color: #f69606; color: white; border: none; border-radius: 5px;">
+    Calculate My Spending
+  </button>
+
+  <div id="spendResults" style="margin-top: 2rem; font-weight: bold;"></div>
+
+  <div id="spendTip" style="margin-top: 1rem; padding: 1rem; background-color: #f8f8f8; border-left: 5px solid #f5a818;"></div>
+</section>
+
+<script>
+  function calculateSpending() {
+    const prices = document.querySelectorAll(".price");
+    const types = document.querySelectorAll(".type");
+
+    let total = 0;
+    let wantTotal = 0;
+    let needTotal = 0;
+
+    for (let i = 0; i < prices.length; i++) {
+      const price = parseFloat(prices[i].value);
+      const type = types[i].value;
+
+      if (!isNaN(price)) {
+        total += price;
+        if (type === "Want") {
+          wantTotal += price;
+        } else if (type === "Need") {
+          needTotal += price;
+        }
+      }
+    }
+
+    const resultsBox = document.getElementById("spendResults");
+
+    if (total === 0) {
+      resultsBox.innerText = "Please enter at least one valid item with a price.";
+      return;
+    }
+
+    const wantPercent = ((wantTotal / total) * 100).toFixed(1);
+    const needPercent = ((needTotal / total) * 100).toFixed(1);
+
+    resultsBox.innerHTML = `
+       You spent <strong>R${total.toFixed(2)}</strong> this week.<br>
+       Wants: R${wantTotal.toFixed(2)} (${wantPercent}%)<br>
+       Needs: R${needTotal.toFixed(2)} (${needPercent}%)<br><br>
+      ${wantPercent > 70 ? "⚠️ You’re spending a lot on Wants! Can you cut back?" : "✅ Nice balance between needs and wants!"}
+    `;
+
+    const tips = [
+      "Try bulk buying with a friend and split the cost.",
+      "Carry exact change to avoid impulse buys.",
+      "Swap sweets for fruit once a week and save money.",
+      "Plan your treats ahead — not every day needs one!",
+      "Track your money daily. Awareness = savings."
+    ];
+
+    const randomTip = tips[Math.floor(Math.random() * tips.length)];
+    document.getElementById("spendTip").innerText = "💡 Tip: " + randomTip;
+  }
+</script>
+
+         <footer class="main-footer">
+  <div class="footer-content">
+    <p>Created by Yamkela Lusithi</p> 
+    <p>MoneySave Jr © 2025</p>
+  </div>
+</footer>
+</body>
+</html>

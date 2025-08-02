@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lan="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Yamkela Lusithi | MoneySave Jr</title>
+        <link rel="Stylesheet" a href="style.css" />
+    </head>
+    <body>
+<!-- WEEKLY PLANNER SECTION -->
+<section id="weekly-planner" style="padding: 2rem; max-width: 900px; margin: auto;">
+  <h2 style="text-align: center; color: #f9bd09; font-size: 2rem;">🗓️ Plan Your Week</h2>
+  <p style="text-align: center; color: #f3f2ee; margin-bottom: 1.5rem;"><strong>Tap on each cell to set how much you'll spend, save or plan for goals.</strong></p>
+
+  <div class="planner-container">
+    <table class="planner-table">
+      <thead>
+        <tr>
+          <th>Day</th>
+          <th>Money In (R)</th>
+          <th>Spend (R)</th>
+          <th>Save (R)</th>
+          <th>Goal </th>
+        </tr>
+      </thead>
+      <tbody id="planner-body"></tbody>
+      <tfoot>
+        <tr>
+          <td><strong>Total</strong></td>
+          <td id="total-in">R0</td>
+          <td id="total-spend">R0</td>
+          <td id="total-save">R0</td>
+          <td>✨</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</section>
+
+<style>
+  .planner-container {
+    overflow-x: auto;
+  }
+
+  .planner-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Comic Sans MS', sans-serif;
+    background: transparent;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .planner-table th, .planner-table td {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid #e0dede;
+  }
+
+  .planner-table thead {
+    background-color: #ffecb3;
+  }
+
+  .planner-table tbody tr:hover {
+    background-color: transparent;
+  }
+
+  .planner-table td[contenteditable="true"] {
+    background-color: transparent;
+    border-radius: 8px;
+    cursor: text;
+    transition: background 0.3s ease;
+  }
+
+  .planner-table td[contenteditable="true"]:focus {
+    background-color: transparent;
+    outline: none;
+  }
+
+  @media screen and (max-width: 600px) {
+    .planner-table th, .planner-table td {
+      padding: 0.6rem;
+      font-size: 0.85rem;
+    }
+  }
+</style>
+
+<script>
+  const weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+  const defaultIn = 20; // Default allowance
+  const tbody = document.getElementById("planner-body");
+
+  weekdays.forEach(day => {
+    const row = document.createElement("tr");
+
+    row.innerHTML = `
+      <td>${day}</td>
+      <td>R${defaultIn}</td>
+      <td contenteditable="true" class="spend">0</td>
+      <td contenteditable="true" class="save">0</td>
+      <td contenteditable="true" class="goal">⚽️ </td>
+    `;
+
+    tbody.appendChild(row);
+  });
+
+  // Recalculate totals when content is changed
+  document.getElementById("weekly-planner").addEventListener("input", () => {
+    let totalSpend = 0;
+    let totalSave = 0;
+    const spendCells = document.querySelectorAll(".spend");
+    const saveCells = document.querySelectorAll(".save");
+
+    spendCells.forEach(cell => {
+      const val = parseFloat(cell.textContent.trim());
+      if (!isNaN(val)) totalSpend += val;
+    });
+
+    saveCells.forEach(cell => {
+      const val = parseFloat(cell.textContent.trim());
+      if (!isNaN(val)) totalSave += val;
+    });
+
+    document.getElementById("total-in").textContent = `R${defaultIn * weekdays.length}`;
+    document.getElementById("total-spend").textContent = `R${totalSpend}`;
+    document.getElementById("total-save").textContent = `R${totalSave}`;
+  });
+</script>
+
+          <footer class="main-footer">
+  <div class="footer-content">
+    <p>Created by Yamkela Lusithi</p> 
+    <p>MoneySave Jr © 2025</p>
+  </div>
+</footer>
+        </body>
+    </html>

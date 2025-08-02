@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lan="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Yamkela Lusithi | MoneySave Jr</title>
+        <link rel="Stylesheet" a href="style.css" />
+    </head>
+    <body>
+        <span class="floating-word word1"><img src="images/yummy-emoji.gif" width="30">Save</span>
+<span class="floating-word word2">Save</span>
+<span class="floating-word word3">Save</span>
+<span class="floating-word word4"><img src="images/yummy-emoji.gif" width="30"> Save!</span>
+
+<!-- SAVE SECTION -->
+<section id="save" style="padding: 2rem; max-width: 700px; margin: auto;">
+  <h2 style="font-size: 2rem; font-weight: bold;"><img src="images/yummy-emoji.gif" width="100">Let's Save Some Lunch Money Junior</h2>
+  <p style="margin-bottom: 1rem;">
+    Want to buy something big on Friday? Start saving small from Monday.
+    Use this calculator to see how much you can save by spending a little less at the tuck shop each day.
+  </p>
+
+  <!-- Inputs -->
+  <div style="display: grid; gap: 1rem;">
+    <label>
+      <img src="images/giphy.webp" width="40"> Pocket Money (R)
+      <input type="number" id="dailyMoney" placeholder="e.g. 20" />
+    </label>
+
+    <label>
+      <img src="images/giphy (1).webp" width="40"> Daily Spend (R)
+      <input type="number" id="dailySpend" placeholder="e.g. 15" />
+    </label>
+
+    <label>
+      <img src="images/giphy (2).webp" width="40"> Number of School Days
+      <input type="number" id="days" value="5" />
+    </label>
+
+    <button onclick="calculateSavings()" style="padding: 0.5rem; background-color: #f3ab06; color: white; border: none; border-radius: 5px;">
+      Calculate My Savings
+    </button>
+  </div>
+
+  <!-- Output -->
+  <div id="results" style="margin-top: 2rem; font-size: 1.2rem; font-weight: bold;"></div>
+
+  <!-- Tip -->
+  <div id="tip" style="margin-top: 1rem; padding: 1rem; background-color: #c4c3c0; border-left: 5px solid #f1be04;">
+    💡 Tip: If you save R10 a week, you’ll have over R500 in a year!
+  </div>
+</section>
+
+<!-- JS -->
+<script>
+  function calculateSavings() {
+    const dailyMoney = parseFloat(document.getElementById("dailyMoney").value);
+    const dailySpend = parseFloat(document.getElementById("dailySpend").value);
+    const days = parseInt(document.getElementById("days").value);
+
+    if (isNaN(dailyMoney) || isNaN(dailySpend) || isNaN(days)) {
+      document.getElementById("results").innerText = "Please enter all values.";
+      return;
+    }
+
+    const dailySave = dailyMoney - dailySpend;
+
+    if (dailySave < 0) {
+      document.getElementById("results").innerText = "You're spending more than you get. Try again!";
+      return;
+    }
+
+    const totalSave = dailySave * days;
+
+    document.getElementById("results").innerHTML =
+      `🎉 You’ll save <strong>R${dailySave.toFixed(2)}</strong> per day. <br>` +
+      `That's <strong>R${totalSave.toFixed(2)}</strong> saved in ${days} days!<br><br>` +
+      `That’s enough for: <br>🍔 Small burger (R25) <br>📶 2x Airtime packs (R12.50 each)`;
+  }
+
+        </script>
+              <footer class="main-footer">
+  <div class="footer-content">
+    <p>Created by Yamkela Lusithi</p> 
+    <p>MoneySave Jr © 2025</p>
+  </div>
+</footer>
+        </body>
+    </html>
