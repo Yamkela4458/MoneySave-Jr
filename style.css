@@ -253,12 +253,12 @@ body{
   100% { transform: translateY(0px); }
 }
 
-/* Alternate animation delay to vary movement */
+
 #Scenarios > .Scenario-1 { animation-delay: 0s; }
 #Scenarios > .scenario-2 { animation-delay: 2s; }
 #Scenarios > .scenario-3 { animation-delay: 4s; }
 
-/* Typography */
+
 #Scenarios h2 {
   font-size: 1.4rem;
   color: #333;
@@ -377,7 +377,7 @@ body{
   backdrop-filter: blur(4px);
 }
 
-/* FLOATING WORDS */
+/* words */
 .floating-word {
   position: absolute;
   font-size: 1.3rem;
@@ -402,7 +402,7 @@ body{
 .word3 { bottom: 20px; left: 20%; animation-delay: 2s; }
 .word4 { bottom: 60px; right: 10%; animation-delay: 3s; }
 
-/* Responsive adjustments */
+
 @media (max-width: 768px) {
   #save {
     padding: 1.5rem;
@@ -577,3 +577,4 @@ body{
     transform: translateY(0);
   }
 }
+
