@@ -7,7 +7,7 @@
         <link rel="Stylesheet" a href="style.css" />
     </head>
     <body>
-<!-- WEEKLY PLANNER SECTION -->
+<!-- Weekly planner -->
 <section id="weekly-planner" style="padding: 2rem; max-width: 900px; margin: auto;">
   <h2 style="text-align: center; color: #f9bd09; font-size: 2rem;">🗓️ Plan Your Week</h2>
   <p style="text-align: center; color: #f3f2ee; margin-bottom: 1.5rem;"><strong>Tap on each cell to set how much you'll spend, save or plan for goals.</strong></p>
@@ -88,7 +88,7 @@
 
 <script>
   const weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
-  const defaultIn = 20; // Default allowance
+  const defaultIn = 20;
   const tbody = document.getElementById("planner-body");
 
   weekdays.forEach(day => {
@@ -105,7 +105,6 @@
     tbody.appendChild(row);
   });
 
-  // Recalculate totals when content is changed
   document.getElementById("weekly-planner").addEventListener("input", () => {
     let totalSpend = 0;
     let totalSave = 0;
@@ -135,4 +134,5 @@
   </div>
 </footer>
         </body>
+
     </html>
