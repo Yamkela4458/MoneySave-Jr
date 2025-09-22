@@ -12,7 +12,7 @@
 <span class="floating-word word3">Save</span>
 <span class="floating-word word4"><img src="images/yummy-emoji.gif" width="30"> Save!</span>
 
-<!-- SAVE SECTION -->
+<!-- Save section -->
 <section id="save" style="padding: 2rem; max-width: 700px; margin: auto;">
   <h2 style="font-size: 2rem; font-weight: bold;"><img src="images/yummy-emoji.gif" width="100">Let's Save Some Lunch Money Junior</h2>
   <p style="margin-bottom: 1rem;">
@@ -37,7 +37,11 @@
       <input type="number" id="days" value="5" />
     </label>
 
-    <button onclick="calculateSavings()" style="padding: 0.5rem; background-color: #f3ab06; color: white; border: none; border-radius: 5px;">
+    <button onclick="calculateSavings()" style="padding: 0.5rem; 
+        background-color: #f3ab06; 
+        color: white; 
+        border: none; 
+        border-radius: 5px;">
       Calculate My Savings
     </button>
   </div>
@@ -45,13 +49,11 @@
   <!-- Output -->
   <div id="results" style="margin-top: 2rem; font-size: 1.2rem; font-weight: bold;"></div>
 
-  <!-- Tip -->
   <div id="tip" style="margin-top: 1rem; padding: 1rem; background-color: #c4c3c0; border-left: 5px solid #f1be04;">
     💡 Tip: If you save R10 a week, you’ll have over R500 in a year!
   </div>
 </section>
 
-<!-- JS -->
 <script>
   function calculateSavings() {
     const dailyMoney = parseFloat(document.getElementById("dailyMoney").value);
