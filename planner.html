@@ -7,10 +7,11 @@
         <link rel="Stylesheet" a href="style.css" />
     </head>
     <body>
-<!-- Weekly planner -->
+
+<!-- Weekly Planner -->
 <section id="weekly-planner" style="padding: 2rem; max-width: 900px; margin: auto;">
-  <h2 style="text-align: center; color: #f9bd09; font-size: 2rem;">🗓️ Plan Your Week</h2>
-  <p style="text-align: center; color: #f3f2ee; margin-bottom: 1.5rem;"><strong>Tap on each cell to set how much you'll spend, save or plan for goals.</strong></p>
+  <h2 style="text-align: center; color: #2d09f9; font-size: 2rem;">🗓️ Plan Your Week</h2>
+  <p style="text-align: center; color: #050112; margin-bottom: 1.5rem; font-size: 1.5rem;"><strong>Tap on each cell to set how much you'll spend, save or plan for goals.</strong></p>
 
   <div class="planner-container">
     <table class="planner-table">
@@ -55,11 +56,11 @@
   .planner-table th, .planner-table td {
     padding: 1rem;
     text-align: center;
-    border-bottom: 1px solid #e0dede;
+    border-bottom: 1px solid #0f0e0e;
   }
 
   .planner-table thead {
-    background-color: #ffecb3;
+    background-color: #635427;
   }
 
   .planner-table tbody tr:hover {
@@ -78,17 +79,17 @@
     outline: none;
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 760px) {
     .planner-table th, .planner-table td {
       padding: 0.6rem;
-      font-size: 0.85rem;
+      font-size: 1.2rem;
     }
   }
 </style>
 
 <script>
   const weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
-  const defaultIn = 20;
+  const defaultIn = 20; 
   const tbody = document.getElementById("planner-body");
 
   weekdays.forEach(day => {
@@ -105,6 +106,7 @@
     tbody.appendChild(row);
   });
 
+  // Recalculate totals 
   document.getElementById("weekly-planner").addEventListener("input", () => {
     let totalSpend = 0;
     let totalSave = 0;
@@ -134,5 +136,4 @@
   </div>
 </footer>
         </body>
-
     </html>
