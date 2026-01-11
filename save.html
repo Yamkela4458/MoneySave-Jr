@@ -7,7 +7,7 @@
         <link rel="Stylesheet" a href="style.css" />
     </head>
     <body>
-        <span class="floating-word word1"><img src="images/yummy-emoji.gif" width="30">Save</span>
+<span class="floating-word word1"><img src="images/yummy-emoji.gif" width="30">Save</span>
 <span class="floating-word word2">Save</span>
 <span class="floating-word word3">Save</span>
 <span class="floating-word word4"><img src="images/yummy-emoji.gif" width="30"> Save!</span>
@@ -15,34 +15,38 @@
 <!-- Save section -->
 <section id="save" style="padding: 2rem; max-width: 700px; margin: auto;">
   <h2 style="font-size: 2rem; font-weight: bold;"><img src="images/yummy-emoji.gif" width="100">Let's Save Some Lunch Money Junior</h2>
-  <p style="margin-bottom: 1rem;">
+  <p style="margin-bottom: 1rem; color: black; font-size: 18px;">
     Want to buy something big on Friday? Start saving small from Monday.
     Use this calculator to see how much you can save by spending a little less at the tuck shop each day.
   </p>
 
   <!-- Inputs -->
   <div style="display: grid; gap: 1rem;">
+    <style>
+      img{
+        border-radius: 20%;
+      }
+      h2{
+        color: #f3ab06;
+      }
+    </style>
     <label>
-      <img src="images/giphy.webp" width="40"> Pocket Money (R)
+      <img src="images/giphy.webp" width="50"> <h2>Pocket Money (R)</h2>
       <input type="number" id="dailyMoney" placeholder="e.g. 20" />
     </label>
 
     <label>
-      <img src="images/giphy (1).webp" width="40"> Daily Spend (R)
+      <img src="images/giphy (1).webp" width="50"> <h2>Daily Spend (R)</h2>
       <input type="number" id="dailySpend" placeholder="e.g. 15" />
     </label>
 
     <label>
-      <img src="images/giphy (2).webp" width="40"> Number of School Days
+      <img src="images/giphy (2).webp" width="50"> <h2>Number of School Days</h2>
       <input type="number" id="days" value="5" />
     </label>
 
-    <button onclick="calculateSavings()" style="padding: 0.5rem; 
-        background-color: #f3ab06; 
-        color: white; 
-        border: none; 
-        border-radius: 5px;">
-      Calculate My Savings
+    <button onclick="calculateSavings()" style="padding: 0.5rem; background-color: #f3ab06; color: white; border: none; border-radius: 5px;">
+      <h4>Calculate My Savings</h4>
     </button>
   </div>
 
