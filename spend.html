@@ -9,13 +9,22 @@
     <body>
 <section id="spend" style="padding: 2rem; max-width: 800px; margin: auto; font-family: 'Poppins', sans-serif;">
   <h2 style="font-size: 2rem; color: #f1ba08; font-weight: bold;"> <img src="images/360_F_320988039_MtlKZNKQL60nNChRVxyHljbvyWWQQw6c.jpg" width="100"> Where Did My Money Go?</h2>
-  <p style="margin-bottom: 1rem;">
-    Track your school spending for the week. Are you spending more on Wants or Needs? Let’s find out.
+  <p style="margin-bottom: 1rem; color: rgb(178, 236, 4);">
+    <b>Track your school spending for the week. 
+    <br>
+    Are you spending more on Wants or Needs? 
+    <br>
+    Let's find out.</b>
   </p>
 
   <table style="width: 100%; border-collapse: collapse; margin-bottom: 1rem;">
     <thead>
       <tr style="background-color: #d7d7d7;">
+        <style>
+          th{
+            color: black;
+          }
+        </style>
         <th>Item Bought</th>
         <th>Price (R)</th>
         <th>Need or Want?</th>
@@ -23,7 +32,7 @@
       </tr>
     </thead>
     <tbody id="spendTable">
-      <!-- 5 editable rows -->
+    
       <tr>
         <td><input type="text" placeholder="e.g. Chips" /></td>
         <td><input type="number" class="price" /></td>
