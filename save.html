@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Yamkela Lusithi | MoneySave Jr</title>
-        <link rel="Stylesheet" a href="style.css" />
+        <link rel="Stylesheet" a href="style.css">
     </head>
     <body>
 <span class="floating-word word1"><img src="images/yummy-emoji.gif" width="30">Save</span>
@@ -13,7 +13,7 @@
 <span class="floating-word word4"><img src="images/yummy-emoji.gif" width="30"> Save!</span>
 
 <!-- Save section -->
-<section id="save" style="padding: 2rem; max-width: 700px; margin: auto;">
+<section id="save" style="padding: 2rem; max-width: 768px; margin: auto;">
   <h2 style="font-size: 2rem; font-weight: bold;"><img src="images/yummy-emoji.gif" width="100">Let's Save Some Lunch Money Junior</h2>
   <p style="margin-bottom: 1rem; color: black; font-size: 18px;">
     Want to buy something big on Friday? Start saving small from Monday.
@@ -54,7 +54,7 @@
   <div id="results" style="margin-top: 2rem; font-size: 1.2rem; font-weight: bold;"></div>
 
   <div id="tip" style="margin-top: 1rem; padding: 1rem; background-color: #c4c3c0; border-left: 5px solid #f1be04;">
-    💡 Tip: If you save R10 a week, you’ll have over R500 in a year!
+    💡 Tip: If you save R10 a week, you'll have over R500 in a year!
   </div>
 </section>
 
@@ -79,18 +79,19 @@
     const totalSave = dailySave * days;
 
     document.getElementById("results").innerHTML =
-      `🎉 You’ll save <strong>R${dailySave.toFixed(2)}</strong> per day. <br>` +
+      `🎉 You'll save <strong>R${dailySave.toFixed(2)}</strong> per day. <br>` +
       `That's <strong>R${totalSave.toFixed(2)}</strong> saved in ${days} days!<br><br>` +
-      `That’s enough for: <br>🍔 Small burger (R25) <br>📶 2x Airtime packs (R12.50 each)`;
+      `That's enough for: <br>🍔 Small burger (R25) <br>📶 2x Airtime packs (R12.50 each)`;
   }
+</script>
 
-        </script>
-              <footer class="main-footer">
+<!-- Footer -->
+<footer class="main-footer">
   <div class="footer-content">
     <p>Created by Yamkela Lusithi</p> 
-    <p>MoneySave Jr © 2025</p>
+    <p>MoneySave Jr &copy; 2025</p>
   </div>
 </footer>
-        </body>
-    </html>
 
+</body>
+</html>
