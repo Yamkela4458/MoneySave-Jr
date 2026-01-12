@@ -1,4 +1,5 @@
-A fun, interactive financial literacy website for kids, built for the FNB App Academy Challenge.
+*A fun, interactive financial literacy website for kids, built for the FNB App Academy Challenge.*
+
 MoneySave Jr helps young learners plan, save, and spend their pocket money wisely with engaging tools and real-life scenarios they can relate to.
 Features
 Savings Calculator: Calculate how much money you can save by spending a little less each day.
@@ -11,14 +12,14 @@ Financial Lessons: Bite-sized tips, animations, and floating words to make money
 
 Kid-Friendly UI: Bright visuals, moving elements, animated lists, and engaging interactions for junior users.
 
-Target Audience
+*Target Audience:*
 Young learners (ages 10–14)
 
 Teachers introducing basic financial literacy
 
 Parents teaching kids about budgeting and savings
 
-Built With
+*Built With:*
 HTML, CSS, JavaScript: Core web technologies
 
 Responsive Design: Mobile and desktop friendly
