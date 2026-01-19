@@ -2,11 +2,12 @@
 body{
     background-image: url("images/Teens-savings-account.jpg");
     background-size: cover;
-    background-position: center;
+    background-position: cover;
     background-repeat: no-repeat;
     width: 100%;
     color: #fff;
     text-align: center;
+    width: 1200px;
 }
 
 /* === Container styling === */
@@ -543,3 +544,4 @@ body{
     transform: translateY(0);
   }
 }
+
