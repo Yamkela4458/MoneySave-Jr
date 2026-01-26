@@ -1,121 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Yamkela Lusithi | MoneySave Jr</title>
-        <link rel="Stylesheet" a href="style.css">
-    </head>
-    <body>
-            <section id="budget" style="padding: 2rem; max-width: 768px; margin: auto; font-family: 'Poppins', sans-serif;">
-            <h2 style="font-size: 2rem;color: #e78708; font-weight: bold;"><img src="images/yummy-emoji.gif" width="50"> Let's Build Your Weekly Budget</h2>
-            <p style="margin-bottom: 1rem;">
-             Enter your allowance and plan your spending. Make sure your money works for you and not against you Kiddo.
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Yamkela Lusithi | MoneySave Jr</title>
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Budget Section -->
+    <section id="budget" class="budget-section">
+        <div class="budget-container">
+
+            <!-- Heading with emoji -->
+            <h2 class="budget-heading">
+                <img src="images/yummy-emoji.gif" width="50" alt="Yummy Emoji">
+                Let's Build Your Weekly Budget
+            </h2>
+
+            <!-- Intro paragraph -->
+            <p class="budget-intro">
+                Enter your allowance and plan your spending. Make sure your money works for you, not against you, Kiddo.
             </p>
 
-                <label for="allowance" style="font-weight: bold;">Weekly Allowance (R):</label>
-                <input type="number" id="allowance" placeholder="e.g. 50" style="margin: 0.5rem 0 1rem; padding: 0.5rem; width: 100%;" />
+            <!-- Weekly allowance input -->
+            <label for="allowance"><strong>Weekly Allowance (R):</strong></label>
+            <input type="number" id="allowance" placeholder="e.g. 50" class="budget-input" />
 
-                <table style="width: 100%; border-collapse: collapse; margin-bottom: 1rem;">
+            <!-- Budget table -->
+            <table class="budget-table">
                 <thead>
-                <tr style="background-color: #c1c1c1;">
-                    <th>Item/Category</th>
-                    <th>Planned Amount (R)</th>
-                    <th>Need or Want?</th>
-                    <th>Notes</th>
-                    </tr>
-                    </thead>
-
-                <tbody id="budgetTable">
                     <tr>
-                    <td><input type="text" placeholder="e.g. Lunch" /></td>
-                    <td><input type="number" class="budgetAmount" /></td>
-                    <td>
-
-                    <select class="budgetType">
-                        <option value="">--</option>
-                        <option value="Need">Need</option>
-                        <option value="Want">Want</option>
-                        </select>
+                        <th>Item/Category</th>
+                        <th>Planned Amount (R)</th>
+                        <th>Need or Want?</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody id="budgetTable">
+                    <!-- Example row -->
+                    <tr>
+                        <td><input type="text" placeholder="e.g. Lunch"></td>
+                        <td><input type="number" class="budgetAmount"></td>
+                        <td>
+                            <select class="budgetType">
+                                <option value="">--</option>
+                                <option value="Need">Need</option>
+                                <option value="Want">Want</option>
+                            </select>
                         </td>
+                        <td><input type="text" placeholder="Plan details"></td>
+                    </tr>
 
-                    <td><input type="text" placeholder="Plan details" /></td>
-                        </tr>
-                        <tr><td><input type="text" /></td><td><input type="number" class="budgetAmount" /></td><td><select class="budgetType"><option value="">--</option><option value="Need">Need</option><option value="Want">Want</option></select></td><td><input type="text" /></td></tr>
-                        <tr><td><input type="text" /></td><td><input type="number" class="budgetAmount" /></td><td><select class="budgetType"><option value="">--</option><option value="Need">Need</option><option value="Want">Want</option></select></td><td><input type="text" /></td></tr>
-                        <tr><td><input type="text" /></td><td><input type="number" class="budgetAmount" /></td><td><select class="budgetType"><option value="">--</option><option value="Need">Need</option><option value="Want">Want</option></select></td><td><input type="text" /></td></tr>
-                        <tr><td><input type="text" /></td><td><input type="number" class="budgetAmount" /></td><td><select class="budgetType"><option value="">--</option><option value="Need">Need</option><option value="Want">Want</option></select></td><td><input type="text" /></td></tr>
-                        </tbody>
-                        </table>
+                    <!-- Additional blank rows for user input -->
+                    <tr>
+                        <td><input type="text"></td>
+                        <td><input type="number" class="budgetAmount"></td>
+                        <td>
+                            <select class="budgetType">
+                                <option value="">--</option>
+                                <option value="Need">Need</option>
+                                <option value="Want">Want</option>
+                            </select>
+                        </td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text"></td>
+                        <td><input type="number" class="budgetAmount"></td>
+                        <td>
+                            <select class="budgetType">
+                                <option value="">--</option>
+                                <option value="Need">Need</option>
+                                <option value="Want">Want</option>
+                            </select>
+                        </td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text"></td>
+                        <td><input type="number" class="budgetAmount"></td>
+                        <td>
+                            <select class="budgetType">
+                                <option value="">--</option>
+                                <option value="Need">Need</option>
+                                <option value="Want">Want</option>
+                            </select>
+                        </td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text"></td>
+                        <td><input type="number" class="budgetAmount"></td>
+                        <td>
+                            <select class="budgetType">
+                                <option value="">--</option>
+                                <option value="Need">Need</option>
+                                <option value="Want">Want</option>
+                            </select>
+                        </td>
+                        <td><input type="text"></td>
+                    </tr>
+                </tbody>
+            </table>
 
-                    <button onclick="calculateBudget()" style="padding: 0.6rem 1rem; background-color: #fbb503; color: white; border: none; border-radius: 5px;">
-                    Calculate Budget
-                    </button>
+            <!-- Calculate button -->
+            <button class="calculate-btn" onclick="calculateBudget()">Calculate Budget</button>
 
-                        <div id="budgetResults" style="margin-top: 2rem; font-weight: bold;"></div>
-                        <div id="budgetTip" style="margin-top: 1rem; padding: 1rem; background-color: #f9f9f9; border-left: 5px solid #e78708;"></div>
-                    </section>
+            <!-- Results and tips -->
+            <div id="budgetResults" class="budget-results"></div>
+            <div id="budgetTip" class="budget-tip"></div>
 
-            <script>
-                function calculateBudget() {
-                const allowance = parseFloat(document.getElementById("allowance").value);
-                const amounts = document.querySelectorAll(".budgetAmount");
-                const types = document.querySelectorAll(".budgetType");
+        </div>
+    </section>
 
-                let totalPlanned = 0;
-                let wantTotal = 0;
-                let needTotal = 0;
+    <!-- Budget calculation script -->
+    <script>
+        function calculateBudget() {
+            // Get user allowance
+            const allowance = parseFloat(document.getElementById("allowance").value);
+            const amounts = document.querySelectorAll(".budgetAmount");
+            const types = document.querySelectorAll(".budgetType");
 
-                for (let i = 0; i < amounts.length; i++) {
+            let totalPlanned = 0;
+            let wantTotal = 0;
+            let needTotal = 0;
+
+            // Calculate totals for Needs and Wants
+            for (let i = 0; i < amounts.length; i++) {
                 const amount = parseFloat(amounts[i].value);
                 const type = types[i].value;
 
                 if (!isNaN(amount)) {
-                totalPlanned += amount;
-                if (type === "Want") {
-                wantTotal += amount;
-                } else if (type === "Need") {
-                needTotal += amount;
+                    totalPlanned += amount;
+                    if (type === "Want") wantTotal += amount;
+                    else if (type === "Need") needTotal += amount;
                 }
             }
-         }
 
-    const resultsBox = document.getElementById("budgetResults");
+            const resultsBox = document.getElementById("budgetResults");
 
-    if (isNaN(allowance) || allowance <= 0) {
-      resultsBox.innerText = "Please enter a valid allowance.";
-      return;
-    }
+            // Validate allowance
+            if (isNaN(allowance) || allowance <= 0) {
+                resultsBox.innerText = "Please enter a valid allowance.";
+                return;
+            }
 
-    const wantPercent = ((wantTotal / totalPlanned) * 100).toFixed(1);
-    const needPercent = ((needTotal / totalPlanned) * 100).toFixed(1);
-    const difference = (allowance - totalPlanned).toFixed(2);
+            // Calculate percentages and remaining amount
+            const wantPercent = ((wantTotal / totalPlanned) * 100).toFixed(1);
+            const needPercent = ((needTotal / totalPlanned) * 100).toFixed(1);
+            const difference = (allowance - totalPlanned).toFixed(2);
 
-    resultsBox.innerHTML = `
-       Your total planned budget: <strong>R${totalPlanned.toFixed(2)}</strong><br>
-       Needs: R${needTotal.toFixed(2)} (${needPercent}%)<br>
-       Wants: R${wantTotal.toFixed(2)} (${wantPercent}%)<br>
-      ${difference < 0 ? "⚠️ You are <strong>R" + Math.abs(difference) + "</strong> over budget. Try to cut some Wants." : "🟢 You have <strong>R" + difference + "</strong> left to save or spend wisely."}
-    `;
+            // Show budget results
+            resultsBox.innerHTML = `
+                Your total planned budget: <strong>R${totalPlanned.toFixed(2)}</strong><br>
+                Needs: R${needTotal.toFixed(2)} (${needPercent}%)<br>
+                Wants: R${wantTotal.toFixed(2)} (${wantPercent}%)<br>
+                ${difference < 0 ? "⚠️ You are <strong>R" + Math.abs(difference) + "</strong> over budget. Try to cut some Wants." : "🟢 You have <strong>R" + difference + "</strong> left to save or spend wisely."}
+            `;
 
-    const tips = [
-      "Always save first — treat it like a bill.",
-      "Wants are fun, but balance is power.",
-      "Use leftover money to grow your savings jar.",
-      "Budgeting gives you more control — not less fun!",
-      "Check your budget before you spend — not after."
-    ];
-
-    const randomTip = tips[Math.floor(Math.random() * tips.length)];
-    document.getElementById("budgetTip").innerText = "💡 Tip: " + randomTip;
-  }
+            // Display a random budgeting tip
+            const tips = [
+                "Always save first — treat it like a bill.",
+                "Wants are fun, but balance is power.",
+                "Use leftover money to grow your savings jar.",
+                "Budgeting gives you more control — not less fun!",
+                "Check your budget before you spend — not after."
+            ];
+            const randomTip = tips[Math.floor(Math.random() * tips.length)];
+            document.getElementById("budgetTip").innerText = "💡 Tip: " + randomTip;
+        }
     </script>
 
-            <footer class="main-footer">
-                <div class="footer-content">
-                    <p>Created by Yamkela Lusithi</p> 
-                    <p>MoneySave Jr &copy; 2025</p>
-                </div>
-        </footer>
-    </body>
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p>Created by Yamkela Lusithi</p>
+            <p>MoneySave Jr © 2025</p>
+        </div>
+    </footer>
+
+</body>
 </html>
+
