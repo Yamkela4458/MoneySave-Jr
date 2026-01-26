@@ -1,140 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Yamkela Lusithi | MoneySave Jr</title>
-        <link rel="Stylesheet" a href="style.css">
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Yamkela Lusithi | MoneySave Jr</title>
 
-<!-- Weekly Planner -->
-<section id="weekly-planner" style="padding: 2rem; max-width: 768px; margin: auto;">
-  <h2 style="text-align: center; color: #2d09f9; font-size: 2rem;">🗓️ Plan Your Week</h2>
-  <p style="text-align: center; color: #050112; margin-bottom: 1.5rem; font-size: 1.5rem;"><strong>Tap on each cell to set how much you'll spend, save or plan for goals.</strong></p>
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-  <div class="planner-container">
-    <table class="planner-table">
-      <thead>
-        <tr>
-          <th>Day</th>
-          <th>Money In (R)</th>
-          <th>Spend (R)</th>
-          <th>Save (R)</th>
-          <th>Goal </th>
-        </tr>
-      </thead>
-      <tbody id="planner-body"></tbody>
-      <tfoot>
-        <tr>
-          <td><strong>Total</strong></td>
-          <td id="total-in">R0</td>
-          <td id="total-spend">R0</td>
-          <td id="total-save">R0</td>
-          <td>✨</td>
-        </tr>
-      </tfoot>
-    </table>
-  </div>
+<!-- Weekly Planner Section -->
+<section id="weekly-planner" class="weekly-planner">
+    <div class="planner-container">
+
+        <!-- Heading -->
+        <h2 class="planner-heading">🗓️ Plan Your Week</h2>
+        <p class="planner-intro">
+            <strong>Tap on each cell to set how much you'll spend, save, or plan for goals.</strong>
+        </p>
+
+        <!-- Planner Table -->
+        <table class="planner-table">
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Money In (R)</th>
+                    <th>Spend (R)</th>
+                    <th>Save (R)</th>
+                    <th>Goal</th>
+                </tr>
+            </thead>
+            <tbody id="planner-body"></tbody>
+            <tfoot>
+                <tr>
+                    <td><strong>Total</strong></td>
+                    <td id="total-in">R0</td>
+                    <td id="total-spend">R0</td>
+                    <td id="total-save">R0</td>
+                    <td>✨</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
 </section>
 
+<!-- Planner Table Styles -->
 <style>
-  .planner-container {
-    overflow-x: auto;
-  }
-
-  .planner-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Comic Sans MS', sans-serif;
-    background: transparent;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    border-radius: 10px;
-    overflow: hidden;
-  }
-
-  .planner-table th, .planner-table td {
-    padding: 1rem;
-    text-align: center;
-    border-bottom: 1px solid #0f0e0e;
-  }
-
-  .planner-table thead {
-    background-color: #635427;
-  }
-
-  .planner-table tbody tr:hover {
-    background-color: transparent;
-  }
-
-  .planner-table td[contenteditable="true"] {
-    background-color: transparent;
-    border-radius: 8px;
-    cursor: text;
-    transition: background 0.3s ease;
-  }
-
-  .planner-table td[contenteditable="true"]:focus {
-    background-color: transparent;
-    outline: none;
-  }
-
-  @media screen and (max-width: 760px) {
-    .planner-table th, .planner-table td {
-      padding: 0.6rem;
-      font-size: 1.2rem;
+    .planner-container {
+        overflow-x: auto;
+        max-width: 768px;
+        margin: auto;
+        padding: 2rem;
     }
-  }
+
+    .planner-heading {
+        text-align: center;
+        color: #2d09f9;
+        font-size: 2rem;
+    }
+
+    .planner-intro {
+        text-align: center;
+        font-size: 1.5rem;
+        color: #050112;
+        margin-bottom: 1.5rem;
+    }
+
+    .planner-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: 'Comic Sans MS', sans-serif;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .planner-table th, .planner-table td {
+        padding: 1rem;
+        text-align: center;
+        border-bottom: 1px solid #0f0e0e;
+    }
+
+    .planner-table thead {
+        background-color: #635427;
+        color: #fff;
+    }
+
+    /* Editable cells */
+    .planner-table td[contenteditable="true"] {
+        cursor: text;
+        border-radius: 8px;
+        transition: background 0.3s ease;
+        background-color: transparent;
+    }
+
+    .planner-table td[contenteditable="true"]:focus {
+        outline: none;
+        background-color: transparent;
+    }
+
+    @media screen and (max-width: 760px) {
+        .planner-table th, .planner-table td {
+            padding: 0.6rem;
+            font-size: 1.2rem;
+        }
+    }
 </style>
 
+<!-- Planner Script -->
 <script>
-  const weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
-  const defaultIn = 20; 
-  const tbody = document.getElementById("planner-body");
+    const weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+    const defaultIn = 20; // Default daily money in
+    const tbody = document.getElementById("planner-body");
 
-  weekdays.forEach(day => {
-    const row = document.createElement("tr");
-
-    row.innerHTML = `
-      <td>${day}</td>
-      <td>R${defaultIn}</td>
-      <td contenteditable="true" class="spend">0</td>
-      <td contenteditable="true" class="save">0</td>
-      <td contenteditable="true" class="goal">⚽️ </td>
-    `;
-
-    tbody.appendChild(row);
-  });
-
-  // Recalculate totals 
-  document.getElementById("weekly-planner").addEventListener("input", () => {
-    let totalSpend = 0;
-    let totalSave = 0;
-    const spendCells = document.querySelectorAll(".spend");
-    const saveCells = document.querySelectorAll(".save");
-
-    spendCells.forEach(cell => {
-      const val = parseFloat(cell.textContent.trim());
-      if (!isNaN(val)) totalSpend += val;
+    // Generate table rows dynamically
+    weekdays.forEach(day => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${day}</td>
+            <td>R${defaultIn}</td>
+            <td contenteditable="true" class="spend">0</td>
+            <td contenteditable="true" class="save">0</td>
+            <td contenteditable="true" class="goal">⚽️</td>
+        `;
+        tbody.appendChild(row);
     });
 
-    saveCells.forEach(cell => {
-      const val = parseFloat(cell.textContent.trim());
-      if (!isNaN(val)) totalSave += val;
-    });
+    // Recalculate totals on input
+    document.getElementById("weekly-planner").addEventListener("input", () => {
+        let totalSpend = 0;
+        let totalSave = 0;
 
-    document.getElementById("total-in").textContent = `R${defaultIn * weekdays.length}`;
-    document.getElementById("total-spend").textContent = `R${totalSpend}`;
-    document.getElementById("total-save").textContent = `R${totalSave}`;
-  });
+        // Sum all spend values
+        document.querySelectorAll(".spend").forEach(cell => {
+            const val = parseFloat(cell.textContent.trim());
+            if (!isNaN(val)) totalSpend += val;
+        });
+
+        // Sum all save values
+        document.querySelectorAll(".save").forEach(cell => {
+            const val = parseFloat(cell.textContent.trim());
+            if (!isNaN(val)) totalSave += val;
+        });
+
+        // Update totals in footer
+        document.getElementById("total-in").textContent = `R${defaultIn * weekdays.length}`;
+        document.getElementById("total-spend").textContent = `R${totalSpend}`;
+        document.getElementById("total-save").textContent = `R${totalSave}`;
+    });
 </script>
 
-          <footer class="main-footer">
-  <div class="footer-content">
-    <p>Created by Yamkela Lusithi</p> 
-    <p>MoneySave Jr &copy; 2025</p>
-  </div>
+<!-- Footer -->
+<footer class="main-footer">
+    <div class="footer-content">
+        <p>Created by Yamkela Lusithi</p>
+        <p>MoneySave Jr &copy; 2025</p>
+    </div>
 </footer>
 
-  </body>
+</body>
 </html>
